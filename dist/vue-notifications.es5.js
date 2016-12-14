@@ -19,7 +19,8 @@ var TYPE = {
   error: 'error',
   warn: 'warn',
   info: 'info',
-  success: 'success'
+  success: 'success',
+  clearAll: 'clearAll'
 };
 
 var VUE_VERSION = {
@@ -188,6 +189,8 @@ var innerMethods = {
         // const interval = setInterval(() => {
         var prev = void 0;
         var cur = void 0;
+
+        // TODO (S.Panfilov)make sure no memory leak here, destroy interval when we're leave page
         setInterval(function () {
           if (watch) {
             cur = watch();
@@ -433,6 +436,10 @@ var VueNotifications = {
 
     this.installed = true;
   }
+
+  //TODO (S.Panfilov) add ability to access this.notifications.someError.message
+  //TODO (S.Panfilov) add "noCall:true" property
+
 };
 
 if (typeof window !== 'undefined' && window.Vue) {
