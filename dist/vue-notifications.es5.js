@@ -277,6 +277,7 @@ var innerMethods = {
   addMethods: function addMethods(targetObj, typesObj, options) {
     Object.keys(typesObj).forEach(function (v) {
       targetObj[typesObj[v]] = function (config) {
+        config = config || {};
         config.type = typesObj[v];
         // TODO (S.Panfilov)fix 'vueApp' in param
         return innerMethods.showMessage(config, options);
