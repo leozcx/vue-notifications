@@ -6,7 +6,8 @@ const TYPE = {
   error: 'error',
   warn: 'warn',
   info: 'info',
-  success: 'success'
+  success: 'success',
+  clearAll: 'clearAll'
 }
 
 const VUE_VERSION = {
